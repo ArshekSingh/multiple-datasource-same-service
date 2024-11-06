@@ -1,0 +1,27 @@
+# Server Configuration
+server:
+  port: 8082
+  servlet:
+    context-path: /sso
+
+# Primary Data Source Configuration
+spring:
+  datasource:
+    primary:
+      url: jdbc:mysql://localhost:3306/dev_uat_db
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    secondary:
+      url: jdbc:mysql://localhost:3306/local_db
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # JPA and Hibernate Configuration
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
